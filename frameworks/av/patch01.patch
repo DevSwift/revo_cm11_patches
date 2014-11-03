@@ -178,14 +178,6 @@ diff --git a/media/libstagefright/Android.mk b/media/libstagefright/Android.mk
 index 7ee91ec..9de6b1a 100644
 --- a/media/libstagefright/Android.mk
 +++ b/media/libstagefright/Android.mk
-@@ -79,6 +79,7 @@ LOCAL_SRC_FILES:=                         \
-         mp4/FragmentedMP4Parser.cpp       \
-         mp4/TrackFragment.cpp             \
-         APE.cpp                           \
-+		ThreadedSource.cpp                \
- 
- LOCAL_C_INCLUDES:= \
-         $(TOP)/frameworks/av/include/media/stagefright/timedtext \
 @@ -193,6 +194,35 @@ LOCAL_SRC_FILES += \
          chromium_http_stub.cpp
  LOCAL_CPPFLAGS += -DCHROMIUM_AVAILABLE=1
@@ -330,7 +322,6 @@ index a75c8f9..2c17cb4 100644
  
 +#ifdef USE_INTEL_MDP
 +#include "UMCMacro.h"
-+#include "include/ThreadedSource.h"
 +#endif
 +
  #ifdef ENABLE_AV_ENHANCEMENTS
